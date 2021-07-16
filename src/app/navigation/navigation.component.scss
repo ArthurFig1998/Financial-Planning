@@ -1,3 +1,5 @@
+@import "../../main-styles.scss";
+
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
     height: 100%;
 }
@@ -38,7 +40,7 @@ mat-toolbar{
 .main-nav-bar { 
     // display: flex;
     margin: 0 auto;
-    max-width: 1080px;
+    max-width: $page-width;
     background-color: transparent;
 }
 

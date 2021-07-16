@@ -2,23 +2,27 @@
 
 .top-bar {
     width: 100%;
-    max-width: 1080px;
+    max-width: $page-width;
     height: 68px;
     margin: 0 auto;
     margin-top: 25px;
     display: flex;
-    // background: linear-gradient(75deg, rgb(214, 180, 247), rgb(173, 203, 231));
 
-    //Center texted
-    // justify-content: center;
     align-items: center;
+}
 
-    h1 {
-        font-size: 1.75em;
-        font-family: 'Lato';
-        font-weight: 900;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: $dark;
+table {
+    text-align: center;
+
+    th {
+        font-size: x-large;
     }
+
+    td {
+        font-size:large;
+    }
+}
+
+.custom-banner-image {
+    background-image: url('../../assets/networth-banner.jpg');
 }

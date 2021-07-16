@@ -24,10 +24,15 @@ export class BudgetItemListComponent implements OnInit {
   isPos: boolean = true;
 
   @Output() delete: EventEmitter<BudgetItem> = new EventEmitter<BudgetItem>();
+  mobile: boolean = false;
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+
+    if(window.screen.width <= 850) {
+      this.mobile = true;
+    }
     if(this.isBudget == true) {
       this.budgetItems = JSON.parse(localStorage.getItem('Budget Items') || '[]');
       this.totalBudget = Number(JSON.parse(localStorage.getItem('Total Amount') || '[]'));

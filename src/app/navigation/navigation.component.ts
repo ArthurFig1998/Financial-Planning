@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-navigation',
@@ -11,7 +12,7 @@ export class NavigationComponent implements OnInit {
 
   @Output() public sidenavToggle = new EventEmitter();
 
-  constructor() { }
+  public constructor(private titleService: Title) { }
 
   ngOnInit(): void {
   }
@@ -20,5 +21,8 @@ export class NavigationComponent implements OnInit {
     this.sidenavToggle.emit();
   }
   
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
+  }
 
 }

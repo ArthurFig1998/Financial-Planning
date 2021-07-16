@@ -1,4 +1,45 @@
 @import '../../main-styles.scss';
-.navbar {
-    margin-bottom: 20px;
+
+h1 {
+  font-weight: 900;
+}
+
+.banner-text {
+  h1 {
+    font-weight: normal;
   }
+}
+
+.custom-banner-image {
+  background-image: url('../../assets/main-banner.jpg');
+}
+
+.item-list li:nth-child(1) {
+  a {
+    background: linear-gradient(75deg, rgba(0, 0, 136, 0.774), rgb(76, 0, 255)); 
+  }
+}
+
+.item-list li:nth-child(2) {
+  a {
+    background: linear-gradient(75deg,rgb(76, 0, 255), rgb(0, 0, 192));
+  }
+}
+
+.item-list li:nth-child(3) {
+  a {
+    background: linear-gradient(75deg,rgb(0, 0, 192), rgb(79, 1, 124));
+  }
+}
+
+.item-list li:nth-child(4) {
+  a {
+    background: linear-gradient(75deg,rgb(79, 1, 124), rgb(133, 3, 165));
+  }
+}
+
+.item-list li:nth-child(5) {
+  a {
+    background: linear-gradient(75deg,rgb(133, 3, 165), rgb(158, 1, 158));
+  }
+}

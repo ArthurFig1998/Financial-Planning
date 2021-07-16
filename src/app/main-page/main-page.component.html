@@ -1,2 +1,63 @@
-<app-banner-intro></app-banner-intro>
-<app-body-content></app-body-content>
+<div class="custom-banner-image">
+    <div class="banner-overlay"></div>
+    <div class="banner-text">
+        <div class="page-center">
+            <div>
+                <h1 id="quote">“The most important investment you can make is in yourself.”</h1>
+                <p id="author">Warren Buffet</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="budget-content">
+  <h1>Financial Literacy</h1>
+</div> -->
+
+<div class="icon-set">
+  <div class="icon-item">
+    <h1>Create a Budget</h1>
+    <p>Knowing how you're spending your money and where your money goes is essential for financial literacy.</p>
+  </div>
+  <div class="icon-item">
+    <h1>Set Goals</h1>
+    <p>Creating smaller milestone goals can help you stay motivated and stay on track for your major goal.</p>
+  </div>
+  <div class="icon-item last">
+    <h1>Stick To The Plan</h1>
+    <p>Create the mentality of saving first and make it a habit.</p>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<div class="budget-content">
+  <h1 id="resources">Resources</h1>
+  <br>
+  <br>
+</div>
+<div class="component-menu-list">
+  <ul class="item-list">
+    <li>
+      <a routerLink="budget" (click)="setTitle('Arthur Figueiredo | Budget Calculator')">
+        <span class="title"><img src="../../assets/money.png" alt="money icon" class="card-icon"></span>
+        <span class="item"> Budget Calculator</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="networth" (click)="setTitle('Arthur Figueiredo | Net Worth Calculator')">
+        <span class="title"><img src="../../assets/piggy-bank.png" alt="money icon" class="card-icon"></span>
+        <span class="item"> Networth Calculator</span>
+      </a>
+    </li>
+     <li>
+       <a routerLink="credit-cards" (click)="setTitle('Arthur Figueiredo | Credit Card Picks')">
+        <span class="title"><img src="../../assets/credit.png" alt="money icon" class="card-icon"></span>
+        <span class="item"> Credit Cards Picks </span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="bank-accounts" (click)="setTitle('Arthur Figueiredo | Bank Account Picks')">
+        <span class="title"><img src="../../assets/bank.png" alt="money icon" class="card-icon"></span>
+        <span class="item"> Bank Account Picks </span>
+      </a>
+    </li>
+  </ul>
+</div>

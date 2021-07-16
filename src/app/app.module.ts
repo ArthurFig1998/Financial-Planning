@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,8 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { NavigationComponent } from './navigation/navigation.component';
-import { BannerIntroComponent } from './banner-intro/banner-intro.component';
-import { BodyContentComponent } from './body-content/body-content.component';
 import { FooterContentComponent } from './footer-content/footer-content.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -26,6 +24,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { NetworthComponent } from './networth/networth.component';
 import { EditItemComponent } from './edit-item/edit-item.component';
+import { CreditCardsComponent } from './credit-cards/credit-cards.component';
+import { BankAccountsComponent } from './bank-accounts/bank-accounts.component';
 // import { RoutingModule } from './routing/routing.module';
 
 @NgModule({
@@ -37,12 +37,12 @@ import { EditItemComponent } from './edit-item/edit-item.component';
     BudgetItemListComponent,
     BudgetItemCardComponent,
     NavigationComponent,
-    BannerIntroComponent,
-    BodyContentComponent,
     FooterContentComponent,
     SidenavListComponent,
     NetworthComponent,
-    EditItemComponent
+    EditItemComponent,
+    CreditCardsComponent,
+    BankAccountsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +58,7 @@ import { EditItemComponent } from './edit-item/edit-item.component';
     MatListModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [Title],
   entryComponents: [EditItemComponent],
   bootstrap: [AppComponent]
 })

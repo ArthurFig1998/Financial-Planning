@@ -1,51 +1,28 @@
 @import '../../main-styles.scss';
-.budget-content {
-    width: 100%;
-    max-width: 1080px;
-    margin: 0 auto;
-    margin-top: 25px;
-}
+
 
 .top-bar {
-    width: 100%;
-    max-width: 1080px;
-    height: 68px;
-    margin: 0 auto;
-    margin-top: 25px;
-    display: flex;
-    // background: linear-gradient(75deg, rgb(214, 180, 247), rgb(173, 203, 231));
+  width: 100%;
+  max-width: $page-width;
+  height: 68px;
+  margin: 0 auto;
+  margin-top: 25px;
+  display: flex;
 
-    //Center texted
-    // justify-content: center;
-    align-items: center;
-
-    h1 {
-        font-size: 1.75em;
-        font-family: 'Lato';
-        font-weight: 900;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: $dark;
-    }
+  align-items: center;
 }
 
 .total-budget-section {
     display: flex;
     height: 250px;
-    max-width: 1080px;
+    max-width: $page-width;
     border-top: 2px solid $dark;
 
-    //Center texted
     justify-content: flex-end;
     align-items: center;
     margin: 0 auto;
 
     h2 {
-        font-family: 'Lato';
-        font-weight: 300;
-        font-size: 58px;
-        color: $dark;
-
         &.green {
             color: lighten($green, 12%);
         }
@@ -59,34 +36,33 @@
 .add-item-section {
     display: flex;
 
-    //Center texted
     justify-content: center;
     align-items: center;
 
     .add-item-container {
-        width: 1080px;
+        width: $page-width;
     }
 }
 
 .card-icon:nth-child(1) {
-    width: 300px;
+  width: 300px;
 }
 
 .card-icon:nth-child(2) {
-    width: 300px;
+  width: 300px;
 }
 
 .card-icon:nth-child(3) {
-    width: 300px;
+  width: 300px;
 }
 
 .card-icon:nth-child(4) {
-    width: 300px;
+  width: 300px;
 }
 
 .item-list li a span{
-    display: block;
-    margin: auto;
+  display: block;
+  margin: auto;
 }
 
 .item-list li:nth-child(1) {
@@ -117,4 +93,36 @@
     a {
       background: linear-gradient(75deg,rgb(133, 3, 165), rgb(158, 1, 158));
     }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .card {
+      max-height: 250px;
+      // min-width: 460px;
+      flex-direction: row;
+    }
+
+    .component-menu-list {
+      .item-list{
+        display: flex;
+        justify-content: center;
+
+        padding: 0;
+      }
+    }
+
+    #budget-first-p {
+      padding-top: 10px;
+    }
+  
+  }
+
+  .component-menu-list {
+    .item-list{
+      padding: 0;
+    }
+  }
+
+  .custom-banner-image {
+    background-image: url('../../assets/budget-banner.jpg');
   }

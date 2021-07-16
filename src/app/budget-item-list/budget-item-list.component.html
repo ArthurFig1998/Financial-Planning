@@ -1,6 +1,9 @@
 <section class="budget-items-section">
     <div class="budget-items-container">
-        <div class="income-column">
+
+        <!--Income and Asset column-->
+        <!--Income and Asset column - Desktop-->
+        <div class="income-column" *ngIf='!mobile'>
             <h1 *ngIf="isBudget">Income</h1>
             <h1 *ngIf="!isBudget">Assets</h1>
             <div class="budget-items" *ngIf="isBudget">
@@ -31,7 +34,38 @@
                 </div>
             </section>
         </div>
-        <div class="expenses-column">
+
+        <!--Income and Asset column - Mobile-->
+        <div class="income-column" *ngIf='mobile'>
+            <h1 *ngIf="isBudget">Income</h1>
+            <h1 *ngIf="!isBudget">Assets</h1>
+            <div class="budget-items" *ngIf="isBudget">
+                <div *ngFor=" let item of budgetItems">
+                    <app-budget-item-card
+                    *ngIf="item.amount >= 0"
+                    [item]="item"
+                    style="display: block; margin-bottom: 20px;"></app-budget-item-card>
+                </div>
+                
+            </div>
+            <div class="budget-items" *ngIf="!isBudget">
+                <div *ngFor=" let item of networthItems">
+                    <app-budget-item-card
+                    *ngIf="item.amount >= 0"
+                    [item]="item"
+                    style="display: block; margin-bottom: 20px;"></app-budget-item-card>
+                </div>
+                
+            </div>
+            <section class="add-item-section">
+                <div class="add-item-container">
+                    <app-add-item-form style="padding: 20px;" (formSubmit)="addItemPos($event)"></app-add-item-form>
+                </div>
+            </section>
+        </div>
+
+        <!--Expense and Liabilities column - Desktop-->
+        <div class="expenses-column" *ngIf='!mobile'>
             <h1 *ngIf="isBudget">Expenses</h1>
             <h1 *ngIf="!isBudget">Liabilities</h1>
             <div class="budget-items" *ngIf="isBudget">
@@ -41,6 +75,36 @@
                     [item]="item"
                     (xButtonClick)="onDeleteButtonClicked(item)"
                     (cardClick)="onCardClicked(item)"
+                    style="display: block; margin-bottom: 20px;"
+                    [isPos]="false"></app-budget-item-card>
+                </div>
+            </div>
+            <div class="budget-items" *ngIf="!isBudget">
+                <div *ngFor=" let item of networthItems">
+                    <app-budget-item-card
+                    *ngIf="item.amount < 0"
+                    [item]="item"
+                    style="display: block; margin-bottom: 20px;"
+                    [isPos]="false"></app-budget-item-card>
+                </div>
+                
+            </div>
+            <section class="add-item-section">
+                <div class="add-item-container">
+                    <app-add-item-form style="padding: 20px;" (formSubmit)="addItemNeg($event)"></app-add-item-form>
+                </div>
+            </section>
+        </div>
+
+        <!--Expense and Liabilities column - Mobile-->
+        <div class="expenses-column" *ngIf='mobile'>
+            <h1 *ngIf="isBudget">Expenses</h1>
+            <h1 *ngIf="!isBudget">Liabilities</h1>
+            <div class="budget-items" *ngIf="isBudget">
+                <div *ngFor=" let item of budgetItems">
+                    <app-budget-item-card
+                    *ngIf="item.amount < 0"
+                    [item]="item"
                     style="display: block; margin-bottom: 20px;"
                     [isPos]="false"></app-budget-item-card>
                 </div>
@@ -66,7 +130,7 @@
         </div>
     </div>
 </section>
-<section class="total-budget-section">
+<section class="total-budget-section budget-content">
     <h2 [ngClass]="{ 'red': totalBudget < 0, 'green': totalBudget > 0 }" *ngIf="isBudget">{{ totalBudget | currency}}</h2>
     <h2 [ngClass]="{ 'red': totalNetworth < 0, 'green': totalNetworth > 0 }" *ngIf="!isBudget">{{ totalNetworth | currency}}</h2>
 </section>

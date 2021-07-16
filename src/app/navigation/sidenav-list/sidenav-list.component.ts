@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -8,13 +9,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class SidenavListComponent implements OnInit {
   @Output() sidenavClose = new EventEmitter();
 
-  constructor() { }
+  public constructor(private titleService: Title) { }
+
 
   ngOnInit() {
   }
 
   public onSidenavClose = () => {
     this.sidenavClose.emit();
+  }
+
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
   }
 
 }

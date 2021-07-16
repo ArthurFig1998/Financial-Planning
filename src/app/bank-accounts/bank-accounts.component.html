@@ -1,0 +1,134 @@
+<div class="custom-banner-image">
+    <div class="banner-overlay"></div>
+    <div class="banner-text">
+        <div class="page-center">
+            <div>
+                <h1 id="quote">Bank Accounts</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="budget-content">
+    <div>
+        <h1><strong>What kind of bank accounts are there?</strong></h1>
+        <p>You may already know what kind of bank accounts there are out there. But did you know 
+            not all checking accounts are the same?</p>
+            <p>The differences can be on things that benefit you, the customer, or it could be on 
+                negative aspects, such as fees. When it comes to checking accounts, some have higher 
+                monthly fees than other, while some don't have a monthly fee at all, and the same can be 
+                said about overdraft fees.</p>
+            <p>As for savings accounts, they can offer you different interest rates. 
+                Most big banks in the U.S have a standard, extremely low, almost non-existing interest rate of 
+                a whopping 0.01%, but other banks (mostly online banks, as they don't have to spend extra money with 
+                physical locations, hiring bank tellers, etc.) offer much higher interest rates. The current average 
+                rate for those is around 0.5%, or 50x higher than the big, traditional banks. There was the good ol' days (like, 
+                a year and a half ago) that rates were 2%+, but that isn't the case anymore. And don't worry, they are all FDIC 
+                insured.
+            </p>
+            <p>Now, let's take a look at our top picks, shall we?</p>
+        <!-- <ul>
+            <li>Checking Account
+                <ul>
+                    <li>Credit Unions</li>
+                    <li>Brick-and-Mortar Banks</li>
+                    <li>Online Banks</li>
+                </ul>
+            </li>
+            <li>Savings Account</li>
+            <li>High Yield Savings Account (HYSA)</li>
+        </ul> -->
+        <h1><strong>Here are our top picks</strong></h1>
+        <br>
+        <h1>Checking Account</h1>
+    </div>
+    <section class="cards" *ngFor="let account of getChecking">
+        <div>
+            <h2>{{ account.name }}</h2>
+            <p>{{ account.description }}</p>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="{{ account.imgPath }}" style="width: 200px" alt="{{ account.name }}"></div>
+            <div class="card-content">
+                <div class="card-title">{{ account.name }}</div>
+                <div class="card-text">
+                    <table class="table table-striped table-hover">
+                        <tbody>
+                            <tr>
+                                <td>Interest Rate</td>
+                                <td>{{ account.interestRate/100 | percent:'0.0-10'}}</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly fee*</td>
+                                <td>{{ account.monthlyFee | currency }}</td>
+                            </tr>
+                            <tr>
+                                <td>Sign up bonus</td>
+                                <td>{{ account.sub | currency }}</td>
+                            </tr>
+                            <tr>
+                                <td>Overdraft Fee</td>
+                                <td>{{ account.overdraftFee | currency }}</td>
+                            </tr>
+                            <tr>
+                                <td>Does it offer a debit card?</td>
+                                <td>{{ account.debitCard }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <a href="{{ account.appLink }}" class="card-readmore">Learn More</a>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <div>
+        <h1 id="savings">Savings Account</h1>
+    </div>
+    <section class="cards" *ngFor="let account of getSavings">
+        <div>
+            <h2>{{ account.name }}</h2>
+            <p>{{ account.description }}</p>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="{{ account.imgPath }}" alt="{{ account.name }}"></div>
+            <div class="card-content">
+                <div class="card-title">{{ account.name }}</div>
+                <div class="card-text">
+                    <table class="table table-striped table-hover">
+                        <tbody>
+                            <tr>
+                                <td>Interest Rate</td>
+                                <td>{{ account.interestRate/100 | percent:'0.0-10'}}</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly fee*</td>
+                                <td>{{ account.monthlyFee | currency }}</td>
+                            </tr>
+                            <tr>
+                                <td>Sign up bonus</td>
+                                <td>{{ account.sub | currency }}</td>
+                            </tr>
+                            <tr>
+                                <td>Overdraft Fee</td>
+                                <td>{{ account.overdraftFee | currency }}</td>
+                            </tr>
+                            <tr>
+                                <td>Does it offer a debit card?</td>
+                                <td>{{ account.debitCard }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <a href="{{ account.appLink }}" class="card-readmore">Learn More</a>
+            </div>
+        </div>
+        
+    </section>
+    <hr>
+    <span style="font-size: 0.9em; font-style: italic;"><p>* There are ways to get the monthly fees waved. 
+        Check the banks websites for those qualifying activities.
+    </p></span>
+    <br>
+</div>

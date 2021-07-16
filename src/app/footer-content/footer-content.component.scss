@@ -1,5 +1,17 @@
+@import '../../main-styles.scss';
+
 .disclosure {
-    max-width: 1080px;
+    max-width: $page-width;
     justify-content: center;
     margin: 0 auto;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    // margin-left: auto;
+    max-width: $page-width;
+    align-items: flex-end;
+    // align-content: flex-end;
 }

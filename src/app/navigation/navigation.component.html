@@ -2,7 +2,7 @@
 <mat-toolbar class="main-nav-bar">
   <div class="mobile-nav">
     <div>
-      <a routerLink="/"><img src="../../assets/logo.png" id="logo" alt="logo"></a>
+      <a routerLink="/" (click)="setTitle('Arthur Figueiredo | Home')"><img src="../../assets/logo.png" id="logo" alt="logo"></a>
     </div>
     <div fxHide.gt-xs class="mobile-menu">
       <button mat-icon-button (click)="onToggleSidenav()">
@@ -13,19 +13,19 @@
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
       <ul fxLayout fxLayoutGap="15px" class="navigation-items">
           <li>
-            <a routerLink="/budget">Budget</a>
+            <a routerLink="budget" (click)="setTitle('Arthur Figueiredo | Budget Calculator')">Budget</a>
           </li>
           <li>
-            <a routerLink="/networth">Networth</a>
+            <a routerLink="networth" (click)="setTitle('Arthur Figueiredo | Networth Calculator')">Net Worth</a>
           </li>
           <!-- <li>
             <a routerlink="/retirement" href="/retirement">Retirement</a>
           </li> -->
           <li>
-            <a routerlink="/credit-cards" href="/credit-cards">Credit Card Picks</a>
+            <a routerLink="credit-cards" (click)="setTitle('Arthur Figueiredo | Credit Card Picls')">Credit Card Picks</a>
           </li>
           <li>
-            <a routerlink="/bank-accounts" href="/bank-accounts">Bank Account Picks</a>
+            <a routerLink="bank-accounts" (click)="setTitle('Arthur Figueiredo | Bank Account Picls')">Bank Account Picks</a>
           </li>
       </ul>
   </div>

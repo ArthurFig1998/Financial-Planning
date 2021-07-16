@@ -82,3 +82,24 @@
         background-color: $light-green;
     }
 }
+
+#edit {
+    width: 20px;
+}
+
+.mobile-functionality {
+    display: none;
+}
+
+@media only screen and (max-width: 800px){
+    .mobile-functionality {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+
+        .edit {
+            padding-left: 5px;
+            padding-right: 7.5px;
+        }
+    }
+}
